@@ -1,0 +1,537 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OurFragrance -  %عطور أصلية100| OurFragrance - Luxury Perfumes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Cairo:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', 'Cairo', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0d9c6;
+            line-height: 1.7;
+        }
+        header {
+            position: relative;
+            height: 90vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.7)),
+                        url('https://images.unsplash.com/photo-1615634614989-87f3d97e0c76?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 6.5rem;
+            color: #d4af37;
+            letter-spacing: 6px;
+            text-shadow: 0 6px 30px rgba(0,0,0,0.9);
+            margin-bottom: 0.8rem;
+        }
+        .tagline-en, .tagline-ar {
+            font-size: 1.8rem;
+            max-width: 900px;
+            color: #c9b38c;
+            margin: 1rem 0;
+        }
+        .tagline-ar {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+        }
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1.4rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212,175,55,0.18);
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: #e0d9c6;
+            text-decoration: none;
+            margin: 0 1.8rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .lang-toggle {
+            background: #d4af37;
+            color: #0f0f0f;
+            padding: 8px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 6% 100px;
+        }
+        h2.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            text-align: center;
+            color: #d4af37;
+            margin-bottom: 70px;
+            position: relative;
+        }
+        h2.section-title-ar {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+        }
+        h2.section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: #d4af37;
+            display: block;
+            margin: 25px auto 0;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 60px;
+        }
+        .product-card {
+            background: #111111;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            border: 1px solid rgba(212,175,55,0.15);
+            text-align: center;
+        }
+        .product-card:hover {
+            transform: translateY(-25px);
+            box-shadow: 0 35px 80px rgba(212,175,55,0.15);
+            border-color: #d4af37;
+        }
+        .product-image {
+            height: 380px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .product-image img {
+            max-height: 100%;
+            max-width: 90%;
+            object-fit: contain;
+            transition: transform 0.8s ease;
+            image-rendering: crisp-edges;
+        }
+        .product-card:hover .product-image img {
+            transform: scale(1.15);
+        }
+        .product-info {
+            padding: 35px 30px;
+        }
+        .product-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: #fff;
+            margin-bottom: 1.4rem;
+        }
+        .product-info h3-ar {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+        }
+        .price-list {
+            list-style: none;
+            margin: 1.8rem 0 2.5rem;
+        }
+        .price-list li {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            color: #c9b38c;
+        }
+        .btn {
+            background: #d4af37;
+            color: #0f0f0f;
+            padding: 16px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+            display: inline-block;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(212,175,55,0.3);
+        }
+        .btn:hover {
+            background: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(212,175,55,0.4);
+        }
+        .order-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.97);
+            z-index: 2000;
+            overflow-y: auto;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        .modal-content {
+            background: #111111;
+            border-radius: 30px;
+            max-width: 1000px;
+            width: 100%;
+            padding: 60px 50px;
+            position: relative;
+            border: 1px solid rgba(212,175,55,0.25);
+        }
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 3.5rem;
+            color: #d4af37;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .close-modal:hover {
+            transform: rotate(180deg) scale(1.2);
+        }
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .modal-image {
+            text-align: center;
+            margin: 2.5rem 0 3.5rem;
+        }
+        .modal-image img {
+            max-width: 320px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.7);
+        }
+        form {
+            display: grid;
+            gap: 28px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: #d4af37;
+            font-size: 1.15rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 1px solid #333;
+            border-radius: 14px;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212,175,55,0.3);
+        }
+        .submit-order {
+            background: #d4af37;
+            color: #0f0f0f;
+            border: none;
+            padding: 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: all 0.4s;
+        }
+        .submit-order:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #000;
+            padding: 80px 6% 50px;
+            text-align: center;
+            border-top: 1px solid rgba(212,175,55,0.12);
+        }
+        footer p {
+            color: #888;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+        .lang-ar body {
+            direction: rtl;
+            text-align: right;
+        }
+        @media (max-width: 768px) {
+            .logo { font-size: 4.5rem; }
+            .nav { padding: 1.2rem 5%; flex-wrap: wrap; }
+            .nav-links { margin-top: 1rem; }
+            .modal-content { padding: 50px 30px; }
+        }
+    </style>
+</head>
+<body class="lang-en">
+
+    <nav class="nav">
+        <a href="#" class="nav-logo">OurFragrance</a>
+        <div class="nav-links">
+            <a href="#collection" class="en">Collection</a>
+            <a href="#collection" class="ar">المجموعة</a>
+            <a href="#order" class="en">Order</a>
+            <a href="#order" class="ar">طلب</a>
+            <span class="lang-toggle" onclick="toggleLanguage()">العربية / EN</span>
+        </div>
+    </nav>
+
+    <header>
+        <h1 class="logo">OurFragrance</h1>
+        <p class="tagline-en">Luxury Designer Fragrances & Decants • Nationwide Delivery Across Morocco • Authentic & Fast</p>
+        <p class="tagline-ar">عطور مصممين فاخرة وديكانت • توصيل لجميع أنحاء المغرب • أصلية وسريعة</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title en">Our Premium Collection</h2>
+        <h2 class="section-title ar section-title-ar" style="display:none;">مجموعتنا المميزة</h2>
+        <div class="products">
+
+            <div class="product-card" data-perfume="stronger">
+                <div class="product-image">
+                    <img src="https://pngimg.com/uploads/perfume/perfume_PNG44.png" alt="Stronger With You Intensely" onerror="this.src='https://m.media-amazon.com/images/I/61GsUP8VcBL._AC_UF1000,1000_QL80_.jpg'">
+                </div>
+                <div class="product-info">
+                    <h3>Stronger With You Intensely</h3>
+                    <ul class="price-list">
+                        <li>100ml -- 1,150 DH</li>
+                        <li>10ml Decant -- 125 DH</li>
+                    </ul>
+                    <div class="btn en">Order Now</div>
+                    <div class="btn ar" style="display:none;">اطلب الآن</div>
+                </div>
+            </div>
+
+            <div class="product-card" data-perfume="writer">
+                <div class="product-image">
+                    <img src="https://pngimg.com/uploads/perfume/perfume_PNG7.png" alt="Writer Anonymous" onerror="this.src='https://admin475.baharstore.az/storage/uploads/images/product-images/img_6904701174fca.png'">
+                </div>
+                <div class="product-info">
+                    <h3>Writer Anonymous</h3>
+                    <ul class="price-list">
+                        <li>100ml -- 230 DH</li>
+                        <li>10ml Decant -- 25 DH</li>
+                    </ul>
+                    <div class="btn en">Order Now</div>
+                    <div class="btn ar" style="display:none;">اطلب الآن</div>
+                </div>
+            </div>
+
+            <div class="product-card" data-perfume="azzaro">
+                <div class="product-image">
+                    <img src="https://pngimg.com/uploads/perfume/perfume_PNG13.png" alt="Azzaro The Most Wanted" onerror="this.src='https://m.media-amazon.com/images/I/814coVYPv-L.jpg'">
+                </div>
+                <div class="product-info">
+                    <h3>Azzaro The Most Wanted</h3>
+                    <ul class="price-list">
+                        <li>100ml -- 1,400 DH</li>
+                        <li>10ml Decant -- 145 DH</li>
+                    </ul>
+                    <div class="btn en">Order Now</div>
+                    <div class="btn ar" style="display:none;">اطلب الآن</div>
+                </div>
+            </div>
+
+            <div class="product-card" data-perfume="elixir">
+                <div class="product-image">
+                    <img src="https://pngimg.com/uploads/perfume/perfume_PNG55.png" alt="Jean Paul Gaultier Le Male Elixir" onerror="this.src='https://m.media-amazon.com/images/I/51ITX7w8DcL.jpg'">
+                </div>
+                <div class="product-info">
+                    <h3>Jean Paul Gaultier Le Male Elixir</h3>
+                    <ul class="price-list">
+                        <li>100ml -- 1,300 DH</li>
+                        <li>125ml -- 1,500 DH</li>
+                        <li>200ml -- 1,750 DH</li>
+                        <li>10ml Decant -- 130 DH</li>
+                    </ul>
+                    <div class="btn en">Order Now</div>
+                    <div class="btn ar" style="display:none;">اطلب الآن</div>
+                </div>
+            </div>
+
+            <div class="product-card" data-perfume="ultra">
+                <div class="product-image">
+                    <img src="https://pngimg.com/uploads/perfume/perfume_PNG22.png" alt="Jean Paul Gaultier Ultra Male" onerror="this.src='https://visionaryfragrances.com/cdn/shop/files/3F0A2989_1024x1024@2x.jpg?v=1741437308'">
+                </div>
+                <div class="product-info">
+                    <h3>Jean Paul Gaultier Ultra Male</h3>
+                    <ul class="price-list">
+                        <li>100ml -- 1,200 DH</li>
+                        <li>125ml -- 1,450 DH</li>
+                        <li>10ml Decant -- 125 DH</li>
+                    </ul>
+                    <div class="btn en">Order Now</div>
+                    <div class="btn ar" style="display:none;">اطلب الآن</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="order-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title en" id="modalTitle"></h2>
+            <h2 class="modal-title ar" id="modalTitleAr" style="display:none;"></h2>
+            <div class="modal-image">
+                <img id="modalImg" src="" alt="Perfume">
+            </div>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="fullName" class="en">Full Name</label>
+                    <label for="fullName" class="ar" style="display:none;">الاسم الكامل</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="en">Phone / WhatsApp</label>
+                    <label for="phone" class="ar" style="display:none;">الهاتف / واتساب</label>
+                    <input type="tel" id="phone" required placeholder="+212 ...">
+                </div>
+                <div class="form-group">
+                    <label for="size" class="en">Select Size / Variant</label>
+                    <label for="size" class="ar" style="display:none;">اختر الحجم / النوع</label>
+                    <select id="size" required>
+                        <option value="">Choose...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="en">City / Region</label>
+                    <label for="city" class="ar" style="display:none;">المدينة / الجهة</label>
+                    <input type="text" id="city" required placeholder="e.g. Nador, Casablanca, Marrakech...">
+                </div>
+                <div class="form-group">
+                    <label for="address" class="en">Full Delivery Address</label>
+                    <label for="address" class="ar" style="display:none;">عنوان التوصيل الكامل</label>
+                    <textarea id="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notes" class="en">Additional Notes / Payment Method</label>
+                    <label for="notes" class="ar" style="display:none;">ملاحظات إضافية / طريقة الدفع</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-order en">Place Order →</button>
+                <button type="submit" class="submit-order ar" style="display:none;">إتمام الطلب →</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p class="en">© 2026 OurFragrance • Luxury Fragrances • Delivery to All Morocco • Authentic Quality</p>
+        <p class="ar" style="display:none;">© 2026 OurFragrance • عطور فاخرة • توصيل لكافة أنحاء المغرب • جودة أصلية</p>
+        <p class="en">Fast & Secure Delivery • WhatsApp: +212 ... • Trusted Since 2025</p>
+        <p class="ar" style="display:none;">توصيل سريع وآمن • واتساب: +212 ... • موثوق منذ 2025</p>
+    </footer>
+
+    <script>
+        const perfumes = {
+            stronger: {
+                titleEn: "Stronger With You Intensely",
+                titleAr: "سترونغر ويذ يو إنتنسلي",
+                sizes: ["100ml - 1,150 DH", "10ml Decant - 125 DH"]
+            },
+            writer: {
+                titleEn: "Writer Anonymous",
+                titleAr: "رايتر أنونيموس",
+                sizes: ["100ml - 230 DH", "10ml Decant - 25 DH"]
+            },
+            azzaro: {
+                titleEn: "Azzaro The Most Wanted",
+                titleAr: "أزارو ذا موست وانتد",
+                sizes: ["100ml - 1,400 DH", "10ml Decant - 145 DH"]
+            },
+            elixir: {
+                titleEn: "Jean Paul Gaultier Le Male Elixir",
+                titleAr: "جان بول غوتييه لو مال إليكسير",
+                sizes: ["100ml - 1,300 DH", "125ml - 1,500 DH", "200ml - 1,750 DH", "10ml Decant - 130 DH"]
+            },
+            ultra: {
+                titleEn: "Jean Paul Gaultier Ultra Male",
+                titleAr: "جان بول غوتييه ألترا مال",
+                sizes: ["100ml - 1,200 DH", "125ml - 1,450 DH", "10ml Decant - 125 DH"]
+            }
+        };
+
+        function toggleLanguage() {
+            document.body.classList.toggle('lang-ar');
+            document.body.classList.toggle('lang-en');
+            document.querySelectorAll('.en').forEach(el => el.style.display = document.body.classList.contains('lang-ar') ? 'none' : 'block');
+            document.querySelectorAll('.ar').forEach(el => el.style.display = document.body.classList.contains('lang-ar') ? 'block' : 'none');
+        }
+
+        const cards = document.querySelectorAll('.product-card');
+        const modal = document.getElementById('orderModal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalTitleAr = document.getElementById('modalTitleAr');
+        const modalImg = document.getElementById('modalImg');
+        const sizeSelect = document.getElementById('size');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const key = card.dataset.perfume;
+                const perfume = perfumes[key];
+
+                modalTitle.textContent = perfume.titleEn;
+                modalTitleAr.textContent = perfume.titleAr;
+                modalImg.src = card.querySelector('img').src;
+
+                sizeSelect.innerHTML = '<option value="">Choose / اختر...</option>';
+                perfume.sizes.forEach(s => {
+                    const opt = document.createElement('option');
+                    opt.value = s;
+                    opt.textContent = s;
+                    sizeSelect.appendChild(opt);
+                });
+
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', () => modal.style.display = 'none');
+        window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+
+        document.getElementById('orderForm').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('شكراً! تم استلام طلبك. سنتواصل معك قريباً عبر الواتساب.\nThank you! Your order is received. We will contact you soon via WhatsApp.');
+            modal.style.display = 'none';
+            e.target.reset();
+        });
+    </script>
+
+</body>
+</html>
